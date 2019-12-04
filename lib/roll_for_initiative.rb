@@ -1,6 +1,7 @@
-require "roll_for_initiative/version"
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
 
-module RollForInitiative
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./roll_for_initiative/version"
+require_relative './roll_for_initiative/cli'
+require_relative './roll_for_initiative/klass'
