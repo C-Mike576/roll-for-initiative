@@ -1,8 +1,15 @@
 #CLI controller
 class RollForInitiative::CLI
     attr_accessor :player_name, :klasses
+
+
+
+    @@site = "https://www.dndbeyond.com/classes"
+
+
+
     def call
-        RollForInitiative::Scraper.new("https://www.dndbeyond.com/classes")
+        RollForInitiative::Scraper.new.klasses(@@site)
         RollForInitiative::Klass.get_klass_names
         welcome_msg
         klass_list
@@ -27,7 +34,7 @@ class RollForInitiative::CLI
         sleep(1)
         @klasses = RollForInitiative::Klass.all
         @klasses.each do |klass|
-            puts "#{klass.name}"
+            puts "#{klass.name} - #{klass.short}"
         end
         sleep(1)
         klass_choose
@@ -37,13 +44,14 @@ class RollForInitiative::CLI
         puts "I'm a very particular god the class must be spelled right. OR ELSE!!!"
         @klass_picked = nil
         @klass_picked = gets.strip.downcase
-        
+
         if RollForInitiative::Klass.klass_name_list.include?(@klass_picked)
             RollForInitiative::Klass.all.each do |type|
                 if type.name == @klass_picked.split.map(&:capitalize).join(' ')
-                    puts type.short
-                    sleep(1)
-                    puts "Does this sound good to you? (y/n)"
+                    RollForInitiative::Scraper.new.grab_encounter(@@site.gsub('/classes', type.klass_url))
+                    puts "#{RollForInitiative::Scraper.encounter}"
+                    sleep(2)
+                    puts "Does this sound like something you would do? (y/n)"
                     input = gets.strip.downcase
                     case input
                         when "y"
@@ -66,7 +74,7 @@ class RollForInitiative::CLI
     end
 
     def picked
-        puts "Time to adventure #{@player_name} the #{@chosen_klass.name}."
+        puts "Time for adventure #{@player_name} the #{@chosen_klass.name}."
         sleep(1)
         goodbye
     end

@@ -22,6 +22,7 @@ class RollForInitiative::Klass
             new_klass = RollForInitiative::Klass.new(klass_info.search(".listing-card__title").text.strip)
             @@klass_name_list << klass_info.search(".listing-card__title").text.strip.downcase
             new_klass.short = klass_info.search(".listing-card__description p").first.text.strip
+            new_klass.klass_url = klass_info.search("a").first["href"] #>/classes/'theclass'
         end
     
     
