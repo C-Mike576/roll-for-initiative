@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type your name when prompted 'exit' will work anywhere that input taken.
 
 ## Development
 
