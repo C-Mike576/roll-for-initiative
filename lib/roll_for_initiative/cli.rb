@@ -2,6 +2,8 @@
 class RollForInitiative::CLI
     attr_accessor :player_name, :klasses
     def call
+        RollForInitiative::Scraper.new("https://www.dndbeyond.com/classes")
+        RollForInitiative::Klass.get_klass_names
         welcome_msg
         klass_list
     end
@@ -23,10 +25,11 @@ class RollForInitiative::CLI
     def klass_list
         puts "Choose your class mortal:"
         sleep(1)
-        @klasses = RollForInitiative::Klass.list_klasses
+        @klasses = RollForInitiative::Klass.all
         @klasses.each do |klass|
             puts "#{klass.name}"
         end
+        sleep(1)
         klass_choose
     end
 
@@ -34,11 +37,12 @@ class RollForInitiative::CLI
         puts "I'm a very particular god the class must be spelled right. OR ELSE!!!"
         @klass_picked = nil
         @klass_picked = gets.strip.downcase
-            
+        
         if RollForInitiative::Klass.klass_name_list.include?(@klass_picked)
             RollForInitiative::Klass.all.each do |type|
-                if type.name == @klass_picked.capitalize
+                if type.name == @klass_picked.split.map(&:capitalize).join(' ')
                     puts type.short
+                    sleep(1)
                     puts "Does this sound good to you? (y/n)"
                     input = gets.strip.downcase
                     case input
@@ -56,12 +60,14 @@ class RollForInitiative::CLI
                 goodbye    
         else
             puts "You are trying my patience. Check your spelling!"
+            sleep(2)
             klass_list
         end
     end
 
     def picked
-        puts "Time to adventure #{@player_name} the #{@chosen_klass.name}"
+        puts "Time to adventure #{@player_name} the #{@chosen_klass.name}."
+        sleep(1)
         goodbye
     end
 

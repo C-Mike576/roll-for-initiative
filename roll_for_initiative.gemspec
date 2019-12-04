@@ -8,7 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["c-mike576"]
   spec.email         = ["m.calkins576@gmail.com"]
 
-  spec.summary       = "short summary"
+  spec.summary       = "Small little project that scrapes D&D classes from dndbeyond.com, then lets you choose a class for and get short description.
+   You can either confirm that class or choose another."
   
   spec.homepage      = "https://github.com/C-Mike576/roll-for-initiative"
   spec.license       = "MIT"
