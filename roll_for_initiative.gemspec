@@ -14,11 +14,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/C-Mike576/roll-for-initiative"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["https://github.com/C-Mike576/roll-for-initiative"]
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["https://github.com/C-Mike576/roll-for-initiative"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["https://github.com/C-Mike576/roll-for-initiative/commits/master"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["https://github.com/C-Mike576/roll-for-initiative"]
+  spec.metadata["https://github.com/C-Mike576/roll-for-initiative/commits/master"]
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
