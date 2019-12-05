@@ -51,7 +51,7 @@ class RollForInitiative::CLI
                     RollForInitiative::Scraper.new.grab_encounter(@@site.gsub('/classes', type.klass_url))
                     puts "#{RollForInitiative::Scraper.encounter}"
                     sleep(2)
-                    puts "Does this sound like something you would do? (y/n)"
+                    puts "Does this sound like you? (y/n)"
                     input = gets.strip.downcase
                     case input
                         when "y"
@@ -76,12 +76,17 @@ class RollForInitiative::CLI
     def picked
         puts "Time for adventure #{@player_name} the #{@chosen_klass.name}."
         sleep(1)
+        adventure
+    end
+
+    def adventure
+        puts "You fight a person"
+        sleep(1)
         goodbye
     end
 
     def goodbye
         puts "Goodbye...for now."
-        sleep(1)
         exit
     end
 

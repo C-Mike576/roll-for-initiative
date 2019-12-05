@@ -11,7 +11,7 @@ class RollForInitiative::Scraper
     def grab_encounter(site)
 
         more_info = Nokogiri::HTML(open(site, "User-Agent" => "Mozilla/5.0 (Windows NT 6.0; rv:12.0) Gecko/20100101 Firefox/12.0 FirePHP/0.7.1"))
-        @@encounter = more_info.search(".content-container p").first.text
+        @@encounter = more_info.search(".content-container p")[1].text
     end
 
     def self.doc
