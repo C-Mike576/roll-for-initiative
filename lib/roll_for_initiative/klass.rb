@@ -4,7 +4,7 @@ class RollForInitiative::Klass
     #this is the container holding the objects
     @@all = []
 
-    #this should be just the array of klasses as strings
+    #this should be just the array of klass names as strings
     @@klass_name_list = []
 
 

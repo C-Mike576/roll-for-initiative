@@ -87,11 +87,11 @@ class RollForInitiative::CLI
             when "fight"
                 puts "you strike down your opponent. You win!"
                 sleep(1)
-                goodbye
+                fight_again
             when "run"
                 puts "Your enemy strikes you while your back is turned. You Lose"
                 sleep(1)
-                goodbye
+                fight_again
             when "exit"
                 goodbye
             else 
@@ -99,6 +99,23 @@ class RollForInitiative::CLI
             end
         end
     end
+
+    def fight_again
+        puts "would you like to fight again?(y/n)"
+        while input = gets.strip.downcase
+            case input
+            when 'y'
+                adventure
+            when 'n'
+                goodbye
+            when 'exit'
+                goodbye
+            else
+                puts "I don't understand the command only enter 'y' or 'n'."
+            end
+        end
+    end
+
 
     def goodbye
         puts "Goodbye...for now."

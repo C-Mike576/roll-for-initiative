@@ -16,7 +16,6 @@ class RollForInitiative::Scraper
 
     def who_you_fight
         oppenent = Nokogiri::HTML(open("http://www.chaoticshiny.com/monstergen.php"))
-        binding.pry
         @@fight = oppenent.search("#output").text.strip
     end
 
