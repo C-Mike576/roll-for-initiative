@@ -52,8 +52,8 @@ class RollForInitiative::CLI
                     puts "#{RollForInitiative::Scraper.encounter}"
                     sleep(2)
                     puts "Does this sound like you? (y/n)"
-                    input = gets.strip.downcase
-                    case input
+                    while input = gets.strip.downcase
+                        case input
                         when "y"
                             @chosen_klass = type
                             picked
@@ -61,6 +61,9 @@ class RollForInitiative::CLI
                             klass_list
                         when "exit"
                             goodbye
+                        else
+                            puts "Only enter 'y' or 'n'."    
+                        end
                     end
                 end
             end
@@ -81,8 +84,11 @@ class RollForInitiative::CLI
 
     def adventure
         RollForInitiative::Scraper.new.who_you_fight
-        puts "Let's see who you fight:\n#{RollForInitiative::Scraper.fight} Will you 'Fight' or 'Run'?"
+        puts "Let's see who you fight:"
         sleep(1)
+        puts "#{RollForInitiative::Scraper.fight}"
+        puts "Will you 'Fight' or 'Run'?"
+        
         while input = gets.strip.downcase
             case input
             when "fight"

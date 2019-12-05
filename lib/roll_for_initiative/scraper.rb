@@ -1,6 +1,6 @@
 class RollForInitiative::Scraper
 
-    @@site = "https://www.dndbeyond.com/classes"
+    @@site = "https://www.dndbeyond.com/classes/"
 
     def klasses(site)
 
