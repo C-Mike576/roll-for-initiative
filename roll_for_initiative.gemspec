@@ -7,10 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = RollForInitiative::VERSION
   spec.authors       = ["c-mike576"]
   spec.email         = ["m.calkins576@gmail.com"]
-
-  spec.summary       = "Small little project that scrapes D&D classes from dndbeyond.com, then lets you choose a class for and get short description.
-   You can either confirm that class or choose another."
-  
+  spec.summary       = "Small little project that scrapes D&D classes"
+  spec.description   = "This is just a small project that scrapes the classes from D&D from the site dndbeyond. It then lets you choose a class and gives a short scenario(again sraped from dndbeyond.com).
+  You can confirm or choose again. After it gives you a random monster to fight scraped from http://www.chaoticshiny.com/monstergen.php win or lose you can fight another random monster."
   spec.homepage      = "https://github.com/C-Mike576/roll-for-initiative"
   spec.license       = "MIT"
 

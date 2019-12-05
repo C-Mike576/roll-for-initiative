@@ -82,6 +82,7 @@ class RollForInitiative::CLI
     def adventure
         RollForInitiative::Scraper.new.who_you_fight
         puts "Let's see who you fight:\n#{RollForInitiative::Scraper.fight} Will you 'Fight' or 'Run'?"
+        sleep(1)
         while input = gets.strip.downcase
             case input
             when "fight"
