@@ -1,8 +1,7 @@
 # RollForInitiative
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/roll_for_initiative`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is just a small project that scrapes the classes from D&D from the site dndbeyond. It then lets you choose a class and gives a short scenario(again sraped from dndbeyond).
+You can confirm or choose again. After it gives you a random monster to fight scraped from http://www.chaoticshiny.com/monstergen.php win or lose you can fight another random monster. 
 
 ## Installation
 
