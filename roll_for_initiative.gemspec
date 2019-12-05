@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/C-Mike576/roll-for-initiative"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = "https://rubygems.org/"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org/gems/roll_for_initiative"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/C-Mike576/roll-for-initiative"
