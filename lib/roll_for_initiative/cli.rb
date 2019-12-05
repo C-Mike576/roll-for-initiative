@@ -80,9 +80,24 @@ class RollForInitiative::CLI
     end
 
     def adventure
-        puts "You fight a person"
-        sleep(1)
-        goodbye
+        RollForInitiative::Scraper.new.who_you_fight
+        puts "Let's see who you fight:\n#{RollForInitiative::Scraper.fight} Will you 'Fight' or 'Run'?"
+        while input = gets.strip.downcase
+            case input
+            when "fight"
+                puts "you strike down your opponent. You win!"
+                sleep(1)
+                goodbye
+            when "run"
+                puts "Your enemy strikes you while your back is turned. You Lose"
+                sleep(1)
+                goodbye
+            when "exit"
+                goodbye
+            else 
+                puts "I don't understand your command only enter 'Fight' or 'run'"
+            end
+        end
     end
 
     def goodbye
